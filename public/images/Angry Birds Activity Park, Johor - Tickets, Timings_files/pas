@@ -1,0 +1,62 @@
+jsonp_callback_1({
+    "id": "1d9488e1-76e1-4d4c-b0a5-8143b92c6b63_desktop_popunder_default_checkbox",
+    "redirectBaseID": "1d9488e1-76e1-4d4c-b0a5-8143b92c6b63_desktop_popunder_redirect_base",
+    "redirectBase": "https://www.clicktripz.com/",
+    "userSearchHistory": [
+        {
+            "timestamp": 1655382797
+        }
+    ],
+    "isPseudoPopUnderRedirecting": false,
+    "isEdgeBroken": false,
+    "serverTimestamp": 1655382846,
+    "searchKey": "c26763d53d8e08f694757fa58d3a842d",
+    "recommendedDisplayMode": "tabbed",
+    "auctionType": 200,
+    "providers": [
+        {
+            "name": "Booking.com",
+            "smallThumb": "https://images.clicktripz.com/25899_16026182749544.png",
+            "mediumThumb": "https://images.clicktripz.com/25899_16026182757437.png",
+            "smallAltThumb": "https://images.clicktripz.com/25899_16026182754115.png",
+            "checked": false,
+            "hidden": false,
+            "id": "1d9488e1-76e1-4d4c-b0a5-8143b92c6b63_desktop_popunder_provider_1",
+            "redirectID": "5030303358",
+            "windowName": "ct_window_25899",
+            "campaignID": "1d9488e1-76e1-4d4c-b0a5-8143b92c6b63_desktop_popunder_provider_1_25899",
+            "campaign": "25899",
+            "campaignType": "1",
+            "ifb": false
+        },
+        {
+            "name": "TripAdvisor",
+            "smallThumb": "https://images.clicktripz.com/5_15803180927597.png",
+            "mediumThumb": "https://images.clicktripz.com/5_15803182469668.png",
+            "smallAltThumb": "https://images.clicktripz.com/5_15803182159527.png",
+            "checked": false,
+            "hidden": false,
+            "id": "1d9488e1-76e1-4d4c-b0a5-8143b92c6b63_desktop_popunder_provider_2",
+            "redirectID": "5080109053",
+            "windowName": "ct_window_1753",
+            "campaignID": "1d9488e1-76e1-4d4c-b0a5-8143b92c6b63_desktop_popunder_provider_2_1753",
+            "campaign": "1753",
+            "campaignType": "1",
+            "ifb": false
+        }
+    ],
+    "strategy": {
+        "publisherId": 3167,
+        "auction_id": "f743a8f5-0307-43c8-bce0-8c09164c879a",
+        "creative_strategy_id": 11,
+        "search_display_type": 2,
+        "searchParams": {
+            "type": 1,
+            "city": "Johor Bahru, Johor, Malaysia",
+            "checkInDate": "06/19/2022",
+            "checkOutDate": "06/20/2022",
+            "guests": 1,
+            "rooms": 1
+        }
+    }
+})

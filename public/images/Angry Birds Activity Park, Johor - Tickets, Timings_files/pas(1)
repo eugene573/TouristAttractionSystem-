@@ -1,0 +1,43 @@
+jsonp_callback_2({
+    "id": "74738636-4320-4a1a-8258-c6a95db26a9b_desktop_interstitial_default_checkbox",
+    "redirectBaseID": "74738636-4320-4a1a-8258-c6a95db26a9b_desktop_interstitial_redirect_base",
+    "redirectBase": "https://www.clicktripz.com/",
+    "userSearchHistory": [],
+    "isPseudoPopUnderRedirecting": false,
+    "isEdgeBroken": false,
+    "serverTimestamp": 1655382848,
+    "searchKey": "07862e2d13d9f9c1b73e15e560b2b689",
+    "recommendedDisplayMode": "tabbed",
+    "auctionType": 100,
+    "providers": [
+        {
+            "name": "Booking.com",
+            "smallThumb": "https://images.clicktripz.com/25880_160261778469.png",
+            "mediumThumb": "https://images.clicktripz.com/25880_160261778621.png",
+            "smallAltThumb": "https://images.clicktripz.com/25880_1602617785100.png",
+            "checked": true,
+            "hidden": false,
+            "id": "74738636-4320-4a1a-8258-c6a95db26a9b_desktop_interstitial_provider_1",
+            "redirectID": "8020103001",
+            "windowName": "ct_window_25880",
+            "campaignID": "74738636-4320-4a1a-8258-c6a95db26a9b_desktop_interstitial_provider_1_25880",
+            "campaign": "25880",
+            "campaignType": "1",
+            "ifb": false
+        }
+    ],
+    "strategy": {
+        "publisherId": 3386,
+        "auction_id": "dc1696aa-7ae0-4cbb-87c9-9c8ef5c4ebf1",
+        "creative_strategy_id": 10,
+        "search_display_type": 1,
+        "searchParams": {
+            "type": 1,
+            "city": "Johor Bahru, Johor, Malaysia",
+            "checkInDate": "06/19/2022",
+            "checkOutDate": "06/20/2022",
+            "guests": 1,
+            "rooms": 1
+        }
+    }
+})
