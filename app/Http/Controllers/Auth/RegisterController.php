@@ -9,6 +9,8 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
+use Illuminate\Http\Request;
+
 class RegisterController extends Controller
 {
     /*
@@ -51,23 +53,45 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'role' => ['required', 'string', 'max:1'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\Models\User
-     */
-    protected function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+    function register(Request $request){
+
+        $request->validate([
+           'name' => ['required', 'string', 'max:255'],
+           'role' => ['required', 'string', 'max:1'],
+           'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+           'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
-    }
+
+        /** Make avata */
+
+        $path = 'users/images/';
+        $fontPath = public_path('fonts/Oliciy.ttf');
+        $char = strtoupper($request->name[0]);
+        $newAvatarName = rand(12,34353).time().'_avatar.png';
+        $dest = $path.$newAvatarName;
+
+        $createAvatar = makeAvatar($fontPath,$dest,$char);
+        $picture = $createAvatar == true ? $newAvatarName : '';
+
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->role = 2;
+        $user->picture = $picture;
+        $user->password = \Hash::make($request->password);
+
+        if( $user->save() ){
+
+           return redirect()->back()->with('success','You are now successfully registerd');
+        }else{
+            return redirect()->back()->with('error','Failed to register');
+        }
+
+   }
 }

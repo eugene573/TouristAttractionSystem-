@@ -24,8 +24,7 @@
     </div>
     </center>
 
-    <br><br>
-
+    <br>
     <p class="text-xl text-gray-700 pt-8 pb-10 leading-8 font-light text-center">
         {{ $post->description }}
     </p>

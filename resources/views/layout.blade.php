@@ -200,7 +200,7 @@ form.example::after {
         >
         
           <img
-            src="https://expertphotography.b-cdn.net/wp-content/uploads/2020/08/social-media-profile-photos-3.jpg"
+            src="https://springhub.org/wp-content/uploads/2021/04/blank_profile.png"
             class="rounded-circle"
             height="45"
             loading="lazy"
@@ -208,23 +208,62 @@ form.example::after {
         </a> 
         
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        @if (Route::has('login'))
+        @auth
+                        @if ( Auth::user()->role == 1)
+                           
+                            <li>
+            <a class="dropdown-item" style="background-color:#86FF33;" href="{{ route('admin.dashboard') }}"> {{ Auth::user()->name }}</a>
+          </li>
+           
           <li>
-            <a class="dropdown-item" style="background-color:#bebebe;"> {{ Auth::user()->name }}</a>
+            <a class="dropdown-item" href="{{ route('admin.profile') }}">My profile</a>
           </li>
-        
-           <li>
-            <a class="dropdown-item" href="">My profile</a>
-          </li>
+
           <li>
-            <a class="dropdown-item" href="">Settings</a>
+            <a class="dropdown-item" href="{{ route('admin.settings') }}">Settings ⚙️</a>
           </li>
+
           <li>
             <a class="dropdown-item" id="log" href="{{ route('logout') }}" onclick="event.preventDefault(); alert('You have successfully logged Out, Have A Nice Day!')
-                                                     document.getElementById('logout-form').submit();"> {{ __('Logout') }}</a>
+                                                     document.getElementById('logout-form').submit();"> {{ __('Logout') }}&nbsp;&nbsp;<i style="font-size:18px" class="fa">&#xf08b;</i></a>
                                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form> 
           </li>
+          
+                        @endif
+
+                        @if ( Auth::user()->role == 2)
+                        <a class="dropdown-item" style="background-color:#86FF33;" href="{{ route('user.dashboard') }}"> {{ Auth::user()->name }}</a>
+          </li>
+           
+          <li>
+            <a class="dropdown-item" href="{{ route('user.profile') }}">My profile</a>
+          </li>
+
+          <li>
+            <a class="dropdown-item" href="{{ route('user.settings') }}">Settings ⚙️</a>
+          </li>
+                 
+          <li>
+            <a class="dropdown-item" id="log" href="{{ route('logout') }}" onclick="event.preventDefault(); alert('You have successfully logged Out, Have A Nice Day!')
+                                                     document.getElementById('logout-form').submit();"> {{ __('Logout') }}&nbsp;&nbsp;<i style="font-size:18px" class="fa">&#xf08b;</i></a>
+                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form> 
+          </li>
+           
+                        @endif
+                    @else
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Log in &nbsp;<i style='font-size:18px' class='fas'>&#xf2f6;</i></a>
+
+                        @if (Route::has('register'))
+                        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">&nbsp; &nbsp;Register</a>
+                        @endif
+         @endauth
+         @endif
+        
           
         </ul>
       </li>

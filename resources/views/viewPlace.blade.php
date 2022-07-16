@@ -24,11 +24,11 @@
                     <br>
                     <h5 class="card-text" style="text-align: center; color: black;">{{$place->reviews}}⭐</h5>
                     <br>
-                    <h5 class="card-text" style="text-align: center;">💲{{$place->price}}</h5>
+                    <h5 class="card-text" style="text-align: center;">{{$place->price}}💲</h5>
                     <br>
                     <h5 class="card-text" style="text-align: center;">{{$place->catName}}</h5>
                     <br>
-                    <h5 class="card-text" style="text-align: center;">⏰ {{$place->openHour}} </h5>
+                    <h5 class="card-text" style="text-align: center;">{{$place->openHour}} ⏰</h5>
                      <br>
                     <a href="{{ route('place.detail', $place->id) }}" class="btn btn-success" style="margin-left:100px">View</a>
                 </div>

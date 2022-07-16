@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +17,11 @@ use App\Http\Controllers\PostsController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function (){
     return view('welcome');
 });
 
+//For Admin
 Route::get('/addCategory', [App\Http\Controllers\CategoryController::class,'index'])->name('add.Category');
 
 Route::get('/addPlace',[App\Http\Controllers\ManagePlaceController::class,'index'])->name('add.Place'); 
@@ -41,6 +45,7 @@ name('editPlace');
 Route::post('/updatePlace', [App\Http\Controllers\ManagePlaceController::class, 'update'])->
 name('updatePlace');
 
+//For User
 Route::get('/placeDetail/{id}',[App\Http\Controllers\PlaceController::class,'placedetail'])->
 name('place.detail');
 
@@ -60,3 +65,24 @@ Route::resource('/blog', PostsController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Admin
+Route::group(['prefix'=>'admin', 'middleware'=>['isAdmin','auth','PreventBackHistory']], function(){
+    Route::get('/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
+    Route::get('/profile',[AdminController::class,'profile'])->name('admin.profile');
+    Route::get('/settings',[AdminController::class,'settings'])->name('admin.settings');
+
+
+    Route::post('/update-profile-info',[AdminController::class,'updateInfo'])->name('adminUpdateInfo');
+    Route::post('/change-profile-picture',[AdminController::class,'updatePicture'])->name('adminPictureUpdate');
+    Route::post('/change-password',[AdminController::class,'changePassword'])->name('adminChangePassword');
+   
+});
+
+//User
+Route::group(['prefix'=>'user', 'middleware'=>['isUser','auth','PreventBackHistory']], function(){
+Route::get('/dashboard',[UserController::class,'index'])->name('user.dashboard');
+Route::get('/profile',[UserController::class,'profile'])->name('user.profile');
+Route::get('/settings',[UserController::class,'settings'])->name('user.settings');
+
+});
