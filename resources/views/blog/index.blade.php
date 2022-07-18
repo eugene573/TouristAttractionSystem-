@@ -1,12 +1,11 @@
 @extends('layout')
-
 @section('content')
 
 <style>
     body{
         background-color: beige;
         font-family: Arial;
-        padding: 75px;
+        padding: 80px;
     }
     .card{
        
@@ -16,6 +15,7 @@
         padding: 25px;
         width: 87.5rem;
     }
+
     #column{
         float: center;
         width: 75%;
@@ -46,18 +46,6 @@
   --color-tertiary: #f28b7d;
   --color-quaternary: #f07a6a;
   --color-quinary: #ee6352;
-}
-
-body {
-  min-height: 70vh;
-  font-family: canada-type-gibson, sans-serif;
-  font-weight: 20;
-  font-size: 1.1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
-  background-color: beige;
 }
 
 .content {

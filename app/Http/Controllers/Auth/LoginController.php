@@ -32,10 +32,11 @@ class LoginController extends Controller
 
     protected function redirectTo(){
         if( Auth()->user()->role == 1){
-            return route('home');
+            return view('welcome');
         }
+
         elseif( Auth()->user() == 2){
-            return route('user.dashboard');
+            return view('welcome');
         }
     }
 
@@ -59,10 +60,10 @@ class LoginController extends Controller
         if( auth()->attempt(array('email'=>$input['email'], 'password'=>$input['password'])) ){
  
          if( auth()->user()->role == 1 ){
-             return redirect()->route('home');
+            return view('welcome');
          }
          elseif( auth()->user()->role == 2 ){
-             return redirect()->route('user.dashboard');
+            return view('welcome');
          }
  
         }else{
