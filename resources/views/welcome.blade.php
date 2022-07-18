@@ -99,7 +99,7 @@
 </head>
 
 <body>
-<h2 class="mb-5 font-weight-bold text-center black-text">Recommendation 👍</h2>
+<h2 class="mb-5 font-weight-bold text-center black-text">Recommendation</h2>
 
 <div class="row">
 
@@ -130,6 +130,42 @@
    <br>
   <p>  RUD GoKart Karting Johor  </p>  
     <button style="width:35%;" onclick= "window.location.href = 'http://localhost:8000/placeDetail/11';">view</button>
+</center>
+</div>
+</div>
+
+<br>
+<br>
+
+<div class="row">
+
+  <div class="column">
+    <center>
+    <img src="http://127.0.0.1:8000/images/242678380.jpg" alt="" style="width:60%;height:60%;">
+     <br>
+     <br>
+    <p>  Fathers Guesthouse Cameron Highlands  </p>
+    <button style="width:35%;" onclick= "window.location.href = 'http://localhost:8000/placeDetail/18';">view</button>
+  </center>
+  </div>
+
+  <div class="column">
+  <center>
+    <img src="http://127.0.0.1:8000/images/Berjaya_Times_Square_theme_park.jpg" alt="" style="width:60%;height:60%;">
+      <br>
+      <br>
+    <p>  Berjaya Times Square Theme Park KL </p>
+      <button style="width:35%;" type="submit" onclick= "window.location.href = 'http://localhost:8000/placeDetail/21';">view</button>
+</center>
+  </div>
+  
+  <div class="column">
+  <center>  
+  <img src="http://127.0.0.1:8000/images/Grand%20Medini%20Suites%20by%20Greatday.jpg" alt="" style="width:60%;height:60%;">
+   <br>
+   <br>
+  <p>  Grand Medini Suites by Greatday  </p>  
+    <button style="width:35%;" onclick= "window.location.href = 'http://localhost:8000/placeDetail/27';">view</button>
 </center>
 </div>
 </div>

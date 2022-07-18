@@ -221,7 +221,7 @@ form.example::after {
           </li>
 
           <li>
-            <a class="dropdown-item" href="{{ route('admin.settings') }}">Settings ⚙️</a>
+            <a class="dropdown-item" href="{{ route('admin.settings') }}">Settings <i class="fa fa-gear fa-spin" style="font-size:18px"></i></a>
           </li>
 
           <li>

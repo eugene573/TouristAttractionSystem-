@@ -36,7 +36,8 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                        <strong>Note:</strong><h6>If you are admin please enter 1, user please enter 2.</h6>
+                                <strong style="color: red;">Note:</strong>
+<h6>If you are admin please enter 1, user please enter 2.</h6>
                             </div>
                         </div>
                         <div class="row mb-3">
