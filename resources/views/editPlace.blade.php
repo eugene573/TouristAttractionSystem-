@@ -19,6 +19,10 @@
                 <input type="text" class="form-control" id="placeIntroduction" name="placeIntroduction" value="{{$place->introduction}}" >                
             </div>
             <div class="form-group">
+                <label for="placeNearByArea">Near By Area</label>
+                <input type="text" class="form-control" id="placeNearByArea" name="placeNearByArea" value="{{$place->nearByArea}}" >                
+            </div>
+            <div class="form-group">
                 <label for="placePrice">Place Price</label>
                 <input type="text" class="form-control" id="placePrice" name="placePrice" value="{{$place->price}}">                
             </div>

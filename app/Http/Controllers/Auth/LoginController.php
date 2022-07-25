@@ -33,10 +33,12 @@ class LoginController extends Controller
     protected function redirectTo(){
         if( Auth()->user()->role == 1){
             return view('welcome');
+            Session::flash('success',"Welcome");
         }
 
         elseif( Auth()->user() == 2){
             return view('welcome');
+            Session::flash('success',"Welcome");
         }
     }
 
@@ -61,9 +63,11 @@ class LoginController extends Controller
  
          if( auth()->user()->role == 1 ){
             return view('welcome');
+            Session::flash('success',"Welcome");
          }
          elseif( auth()->user()->role == 2 ){
             return view('welcome');
+            Session::flash('success',"Welcome");
          }
  
         }else{

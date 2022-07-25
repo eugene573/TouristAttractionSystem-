@@ -17,6 +17,7 @@ class CreatePlacesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('introduction');
+            $table->string('nearByArea');
             $table->string('price');
             $table->string('image1');
             $table->string('image2');

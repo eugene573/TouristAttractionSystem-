@@ -1,21 +1,22 @@
 @extends('layout')
+
 @section('content')
 
 <style>
     body{
         background-color: beige;
         font-family: Arial;
-        padding: 80px;
     }
     .card{
-       
+        
         background-color: white;
         background-repeat: no-repeat;
         background-size: auto;
         padding: 25px;
         width: 87.5rem;
+        left: 5.5%;
+        border-radius: 20px;
     }
-
     #column{
         float: center;
         width: 75%;
@@ -41,7 +42,7 @@
 }
 
 :root {
-    --color-primary: #f6aca2;
+  --color-primary: #f6aca2;
   --color-secondary: #f49b90;
   --color-tertiary: #f28b7d;
   --color-quaternary: #f07a6a;
@@ -64,9 +65,9 @@
   text-align: center;
   margin: 0;
   color: var(--color-primary);
-  //color: transparent;
+  /*color: transparent;
   //background-color: white;
-  //background-clip: text;
+  //background-clip: text;*/
   animation: shadows 1.2s ease-in infinite, move 1.2s ease-in infinite;
   letter-spacing: 0.5rem;
 }
@@ -136,7 +137,7 @@
 }
 </style>
 <br>
-<br>
+<br><br>
 <div class="content">
   <h2 class="text_shadows">Blog Post</h2>
 </div>
@@ -154,7 +155,7 @@
         <a 
             href="/blog/create"
             class="bg-black-500 uppercase bg-transparent text-gray-100 text-xs font-extrabold py-2 px-4 rounded-3xl">
-            Create Post
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create Post
         </a>
     </div><br>
 @endif
@@ -189,7 +190,8 @@
                             </a>
                         </span>
                     </div><br>
-
+                    &nbsp;
+                    &nbsp;
             <span class="float-right">
                 <form 
                     action="/blog/{{ $post->slug }}"

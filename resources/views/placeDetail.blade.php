@@ -2,6 +2,7 @@
 @section('content')
 <br>
 <br>
+<br>
 <div class="row">
     @foreach($places as $place)
     <div class="col-sm-2"></div>
@@ -199,6 +200,8 @@ function showSlides(n) {
               <br>
               <h5><div class="card-text"><strong><b style="color:blue;">Introduction:&nbsp;&nbsp;</b></strong>{{$place->introduction}}</div></h5>
                <br>
+               <h5><div class="card-text"><strong><b style="color:blue;">Near By Area:&nbsp;&nbsp;</b></strong>{{$place->nearByArea}}</div></h5>
+              <br>
                <h5><div class="card-text"><strong><b style="color:blue;">Open Hour⏰: &nbsp;&nbsp;</b></strong>{{$place->openHour}}</div></h5>
                <br>
               <h5><div class="card-text"><strong><b style="color:blue;">Price💲: &nbsp;&nbsp;</b></strong>{{$place->price}}</div></h5>

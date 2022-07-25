@@ -87,13 +87,43 @@
   float: left;
   width: 33.33%;
   padding: 5px;
+  position: relative;
+  max-width: 400px;
 }
 
 /* Clearfix (clear floats) */
 .row::after {
   content: "";
   clear: both;
-  display: table; backg
+  display: table; 
+}
+
+* {box-sizing: border-box;}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: center; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 100%;
+  height: 10%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 7px;
+  text-align: center;
+}
+
+.column:hover .overlay {
+  opacity: 1;
 }
 </style>
 </head>
@@ -102,34 +132,33 @@
 <h2 class="mb-5 font-weight-bold text-center black-text">Recommendation</h2>
 
 <div class="row">
-
-  <div class="column">
-    <center>
-    <img src="http://localhost:8000/images/pcc.jpg" alt="" style="width:60%;height:60%;">
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  
+  <div class="column">    
+    <img src="http://localhost:8000/images/pcc.jpg" alt="" style="width:100%;height:60%;">
+     <div class="overlay">Cameron Highlands Flora Park</div>
      <br>
-     <br>
-    <p>  Cameron Highlands Flora Park  </p>
-    <button style="width:35%;" onclick= "window.location.href = 'http://localhost:8000/placeDetail/15';">view</button>
-  </center>
+     <center>
+    <button style="width:29%;" class="btn btn-success" onclick= "window.location.href = 'http://localhost:8000/placeDetail/15';">view</button>
+    </center>
   </div>
 
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
   <div class="column">
+    <img src="http://localhost:8000/images/wmxecnhg1mejqwqrqdmb.webp" alt="" style="width:100%;height:60%;">
+   <div class="overlay">Camp5 Climbing Gym Paradigm Johor</div>
+   <br>
+   <center>
+      <button style="width:29%;" class="btn btn-success" onclick= "window.location.href = 'http://localhost:8000/placeDetail/10';">view</button>
+   </center>
+ </div>
+
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+  <div class="column">  
+  <img src="http://localhost:8000/images/RUD-Karting-in-Johor-Bahru-1.png" alt="" style="width:100%;height:60%;">
+  <div class="overlay">RUD GoKart Karting Johor</div>
+  <br>
   <center>
-    <img src="http://localhost:8000/images/wmxecnhg1mejqwqrqdmb.webp" alt="" style="width:60%;height:60%;">
-      <br>
-      <br>
-    <p>  Camp5 Climbing Gym Paradigm Johor  </p>
-      <button style="width:35%;" type="submit" onclick= "window.location.href = 'http://localhost:8000/placeDetail/10';">view</button>
-</center>
-  </div>
-  
-  <div class="column">
-  <center>  
-  <img src="http://localhost:8000/images/RUD-Karting-in-Johor-Bahru-1.png" alt="" style="width:60%;height:60%;">
-   <br>
-   <br>
-  <p>  RUD GoKart Karting Johor  </p>  
-    <button style="width:35%;" onclick= "window.location.href = 'http://localhost:8000/placeDetail/11';">view</button>
+    <button style="width:29%;" class="btn btn-success" onclick= "window.location.href = 'http://localhost:8000/placeDetail/11';">view</button>
 </center>
 </div>
 </div>
@@ -138,37 +167,37 @@
 <br>
 
 <div class="row">
-
-  <div class="column">
-    <center>
-    <img src="http://127.0.0.1:8000/images/242678380.jpg" alt="" style="width:60%;height:60%;">
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  
+  <div class="column">    
+    <img src="http://127.0.0.1:8000/images/242678380.jpg" alt="" style="width:100%;height:60%;">
+     <div class="overlay">Fathers Guesthouse Cameron Highlands</div>
      <br>
-     <br>
-    <p>  Fathers Guesthouse Cameron Highlands  </p>
-    <button style="width:35%;" onclick= "window.location.href = 'http://localhost:8000/placeDetail/18';">view</button>
-  </center>
+     <center>
+    <button style="width:29%;" class="btn btn-success" onclick= "window.location.href = 'http://localhost:8000/placeDetail/18';">view</button>
+    </center>
   </div>
 
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
   <div class="column">
+    <img src="http://127.0.0.1:8000/images/Berjaya_Times_Square_theme_park.jpg" alt="" style="width:100%;height:60%;">
+   <div class="overlay">Berjaya Times Square Theme Park KL</div>
+   <br>
+   <center>
+      <button style="width:29%;" class="btn btn-success" onclick= "window.location.href = 'http://localhost:8000/placeDetail/21';">view</button>
+   </center>
+ </div>
+
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+  <div class="column">  
+  <img src="http://127.0.0.1:8000/images/Grand%20Medini%20Suites%20by%20Greatday.jpg" alt="" style="width:100%;height:60%;">
+  <div class="overlay">Grand Medini Suites by Greatday</div>
+  <br>
   <center>
-    <img src="http://127.0.0.1:8000/images/Berjaya_Times_Square_theme_park.jpg" alt="" style="width:60%;height:60%;">
-      <br>
-      <br>
-    <p>  Berjaya Times Square Theme Park KL </p>
-      <button style="width:35%;" type="submit" onclick= "window.location.href = 'http://localhost:8000/placeDetail/21';">view</button>
-</center>
-  </div>
-  
-  <div class="column">
-  <center>  
-  <img src="http://127.0.0.1:8000/images/Grand%20Medini%20Suites%20by%20Greatday.jpg" alt="" style="width:60%;height:60%;">
-   <br>
-   <br>
-  <p>  Grand Medini Suites by Greatday  </p>  
-    <button style="width:35%;" onclick= "window.location.href = 'http://localhost:8000/placeDetail/27';">view</button>
+    <button style="width:29%;" class="btn btn-success" onclick= "window.location.href = 'http://localhost:8000/placeDetail/27';">view</button>
 </center>
 </div>
 </div>
+
 </body>
 </html>
 @endsection

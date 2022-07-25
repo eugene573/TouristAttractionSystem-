@@ -15,6 +15,7 @@
                         <td><h5 style="font-weight-bold black-text">Reviews</h5></td>
                         <td><h5 style="font-weight-bold black-text">Price</h5></td>
                         <td><h5 style="font-weight-bold black-text">Introduction</h5></td>
+                        <td><h5 style="font-weight-bold black-text">Near By Area</h5></td>
                         <td><h5 style="font-weight-bold black-text">Category</h5></td>
                         <td><h5 style="font-weight-bold black-text">Open Hour</h5></td>
                         <td><h5 style="font-weight-bold black-text">Address</h5></td>
@@ -50,6 +51,7 @@
                         <td>{{$place->reviews}}</td>
                         <td>{{$place->price}}</td>
                         <td>{{$place->introduction}}</td>
+                        <td>{{$place->nearByArea}}</td>
                         <td>{{$place->catName}}</td>
                         <td>{{$place->openHour}}</td>
                         <td>{{$place->address}}</td>

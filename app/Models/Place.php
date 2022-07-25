@@ -11,7 +11,7 @@ use DB;
 class Place extends Model
 {
     use HasFactory;
-    protected $fillable=['name','introduction','reviews','openHour','price','image1','image2','image3','image4','image5','CategoryID','address','bookingMethod','contactNumber','map'];
+    protected $fillable=['name','introduction','nearByArea','reviews','openHour','price','image1','image2','image3','image4','image5','CategoryID','address','bookingMethod','contactNumber','map'];
     public function Category(){
         return $this->belongsTo('App\Models\Category');
     }

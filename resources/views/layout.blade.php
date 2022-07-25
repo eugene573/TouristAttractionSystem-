@@ -158,26 +158,19 @@ form.example::after {
                     <a class="dropdown-item" style= font-family:Arial; href="{{route('outdoor.places')}}">Outdoor</a> 
                     </div>
                     </li>
-                    &nbsp; &nbsp;
-                    &nbsp; &nbsp;
-                    &nbsp; &nbsp;
-                    &nbsp; &nbsp;
-                    &nbsp; &nbsp;
-                    &nbsp; &nbsp;
-                    &nbsp; &nbsp;
-                    &nbsp; &nbsp;
-                    &nbsp; &nbsp;
-                    &nbsp; &nbsp;
-                    &nbsp; &nbsp;
-                    &nbsp; &nbsp;
-                    &nbsp; &nbsp;
-                    &nbsp; &nbsp;
-                    &nbsp; &nbsp;
-                    &nbsp; &nbsp;
-                    &nbsp; &nbsp;
-                    &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 </ul>
-                
+                @if(Session::has('success'))
+                  <div class="alert alert-success" role="alert">
+                    {{Session::get('success')}}
+                  </div>
+                @endif
                 <form class="example" action="{{route('search.place')}}" method="POST" style="margin:auto;width:290px">
                  @csrf
      <input type="text" placeholder="Search..." name="keyword">
@@ -243,7 +236,7 @@ form.example::after {
           </li>
 
           <li>
-            <a class="dropdown-item" href="{{ route('user.settings') }}">Settings ⚙️</a>
+            <a class="dropdown-item" href="{{ route('user.settings') }}">Settings <i class="fa fa-gear fa-spin" style="font-size:18px"></i></a>
           </li>
                  
           <li>
@@ -263,14 +256,12 @@ form.example::after {
                         @endif
          @endauth
          @endif
-        
-          
+
         </ul>
       </li>
     </ul>
   </div>
 </nav>
-
             </div>
                 </div>
             </nav>

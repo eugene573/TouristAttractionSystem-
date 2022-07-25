@@ -45,6 +45,7 @@ class ManagePlaceController extends Controller
         $addPlace=Place::create([
             'name'=>$r->placeName,
             'introduction'=>$r->placeIntroduction,
+            'nearByArea'=>$r->placeNearByArea,
             'price'=>$r->placePrice,
             'image1'=>$imageName1,
             'image2'=>$imageName2,
@@ -128,6 +129,7 @@ class ManagePlaceController extends Controller
 
         $places->name=$r->placeName;
         $places->introduction=$r->placeIntroduction;
+        $places->nearByArea=$r->placeNearByArea;
         $places->price=$r->placePrice;
         $places->CategoryID=$r->CategoryID;
         $places->address=$r->placeAddress;

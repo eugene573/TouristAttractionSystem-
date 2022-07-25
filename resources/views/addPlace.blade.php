@@ -24,6 +24,10 @@
                 <input type="text" class="form-control" id="placeIntroduction" name="placeIntroduction">                
             </div>
             <div class="form-group">
+                <label for="placeNearByArea">Near By Area</label>
+                <input type="text" class="form-control" id="placeNearByArea" name="placeNearByArea">                
+            </div>
+            <div class="form-group">
                 <label for="placePrice">Place Price</label>
                 <input type="text" class="form-control" id="placePrice" name="placePrice">                
             </div>

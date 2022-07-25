@@ -40,6 +40,7 @@ class PlaceController extends Controller
          $addPlace=Place::create([
              'name'=>$r->placeName,
              'introduction'=>$r->placeIntroduction,
+             'nearByArea'=>$r->placeNearByArea,
              'reviews'=>$r->placeReviews,
              'openHour'=>$r->placeOpenHour,
              'price'=>$r->placePrice,
@@ -127,6 +128,7 @@ class PlaceController extends Controller
 
          $places->name=$r->placeName;
          $places->introduction=$r->placeIntroduction;
+         $places->nearByArea=$r->placeNearByArea;
          $places->reviews=$r->placeReviews;
          $places->openHour=$r->placeOpenHour;
          $places->price=$r->placePrice;
