@@ -192,21 +192,22 @@ form.example::after {
           aria-expanded="false"
         >
         
-          <img
-            src="https://springhub.org/wp-content/uploads/2021/04/blank_profile.png"
-            class="rounded-circle"
-            height="45"
-            loading="lazy"
-          />
-        </a> 
+        
         
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
         @if (Route::has('login'))
         @auth
                         @if ( Auth::user()->role == 1)
+
+                        <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF0mkZsMkaywe4ecyexbpomRK2UmXnT-YAr9u_6Ezi11ZmhnFF7OKHYtN0rFsny-OpIZU&usqp=CAU"
+            class="rounded-circle"
+            height="60"
+            loading="lazy"
+          />       
                            
-                            <li>
-            <a class="dropdown-item" style="background-color:#86FF33;" href="{{ route('admin.dashboard') }}"> {{ Auth::user()->name }}</a>
+          <li>
+            <a class="dropdown-item" style="background-color:#D3D3D3;" href="{{ route('admin.dashboard') }}">{{ Auth::user()->name }}</a>
           </li>
            
           <li>
@@ -228,7 +229,13 @@ form.example::after {
                         @endif
 
                         @if ( Auth::user()->role == 2)
-                        <a class="dropdown-item" style="background-color:#86FF33;" href="{{ route('user.dashboard') }}"> {{ Auth::user()->name }}</a>
+                        <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF0mkZsMkaywe4ecyexbpomRK2UmXnT-YAr9u_6Ezi11ZmhnFF7OKHYtN0rFsny-OpIZU&usqp=CAU"
+            class="rounded-circle"
+            height="60"
+            loading="lazy"
+          />       
+                <a class="dropdown-item" style="background-color:#D3D3D3;" href="{{ route('user.dashboard') }}"> {{ Auth::user()->name }}</a>
           </li>
            
           <li>
@@ -246,9 +253,15 @@ form.example::after {
                                         @csrf
                                     </form> 
           </li>
-           
+          
                         @endif
-                    @else
+                    @else 
+                    <img
+            src="https://springhub.org/wp-content/uploads/2021/04/blank_profile.png"
+            class="rounded-circle"
+            height="60"
+            loading="lazy"
+          />       
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Log in &nbsp;<i style='font-size:18px' class='fas'>&#xf2f6;</i></a>
 
                         @if (Route::has('register'))
@@ -256,7 +269,7 @@ form.example::after {
                         @endif
          @endauth
          @endif
-
+        </a>
         </ul>
       </li>
     </ul>
