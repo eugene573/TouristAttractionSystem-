@@ -113,7 +113,7 @@
   background: rgba(0, 0, 0, 0.5); /* Black see-through */
   color: #f1f1f1; 
   width: 100%;
-  height: 10%;
+  height: 11%;
   transition: .5s ease;
   opacity:0;
   color: white;

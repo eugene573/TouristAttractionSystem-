@@ -171,17 +171,19 @@ form.example::after {
                     {{Session::get('success')}}
                   </div>
                 @endif
-                <form class="example" action="{{route('search.place')}}" method="POST" style="margin:auto;width:290px">
+                <form class="example" action="{{route('search.place')}}" method="POST" style="margin:auto;width:290px;">
                  @csrf
-     <input type="text" placeholder="Search..." name="keyword">
+     <input type="text" placeholder="Search..." name="keyword" style="width:190px;">
   <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
-                &nbsp; &nbsp;
-                &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp;
                 <nav class="navbar-expand-lg">
   <div class="container-fluid">
     <ul class="navbar-nav">
       <!-- Avatar -->
+      <i class="fa fa-user" style="font-size:29px"></i>
+      <br>
       <li class="nav-item dropdown">
         <a
           class="nav-link dropdown-toggle d-flex align-items-center"
@@ -198,15 +200,12 @@ form.example::after {
         @if (Route::has('login'))
         @auth
                         @if ( Auth::user()->role == 1)
-
                         <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF0mkZsMkaywe4ecyexbpomRK2UmXnT-YAr9u_6Ezi11ZmhnFF7OKHYtN0rFsny-OpIZU&usqp=CAU"
             class="rounded-circle"
             height="60"
             loading="lazy"
           />       
-                           
-          <li>
             <a class="dropdown-item" style="background-color:#D3D3D3;" href="{{ route('admin.dashboard') }}">{{ Auth::user()->name }}</a>
           </li>
            

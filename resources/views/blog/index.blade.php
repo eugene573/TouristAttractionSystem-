@@ -165,10 +165,13 @@
 <div class="row">
     <div class="column">
         <div class="card">
+          <center>
          <h1>{{ $post->title }}</h1>
             <h5>By <span>{{ $post->user->name }}</span>, 
             Created on {{ date('jS M Y', strtotime($post->updated_at)) }}  
-            </h5><br>
+            </h5>
+            </center>
+            <br>
             <div><center>
                 <img src="{{ asset('images/' . $post->image_path) }}" style="height: 500px; width: 700px;" class="img-fluid" alt="">
             </div></center><br>

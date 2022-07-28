@@ -1,6 +1,4 @@
-@extends('dashboards.admins.layouts.admin-dash-layout')
-@section('title','Profile')
-
+@extends('layout')
 @section('content')
 
 
@@ -39,7 +37,7 @@
                   <p class="text-muted text-center">Admin</p>
 
                   <input type="file" name="admin_image" id="admin_image" style="opacity: 0;height:1px;display:none">
-                  <a href="javascript:void(0)" class="btn btn-primary btn-block" id="change_picture_btn"><b>Change picture</b></a>
+                  <a href="javascript:void(0)" class="btn btn-primary btn-block" id="change_picture_btn"><b>Change Profile Image</b></a>
                   
                 </div>
                 <!-- /.card-body -->
@@ -77,10 +75,10 @@
                           </div>
                         </div>
                         <div class="form-group row">
-                          <label for="inputName2" class="col-sm-2 col-form-label">Favorite Color</label>
+                          <label for="inputName2" class="col-sm-2 col-form-label">Sex</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputName2" placeholder="Favorite color" value="{{ Auth::user()->favoriteColor }}" name="favoritecolor">
-                            <span class="text-danger error-text favoritecolor_error"></span>
+                            <input type="text" class="form-control" id="inputName2" placeholder="Sex" value="{{ Auth::user()->sex }}" name="sex">
+                            <span class="text-danger error-text sex_error"></span>
                           </div>
                         </div>
                         <div class="form-group row">
@@ -94,7 +92,7 @@
                     <div class="tab-pane" id="change_password">
                         <form class="form-horizontal" action="{{ route('adminChangePassword') }}" method="POST" id="changePasswordAdminForm">
                           <div class="form-group row">
-                            <label for="inputName" class="col-sm-2 col-form-label">Old Passord</label>
+                            <label for="inputName" class="col-sm-2 col-form-label">Old Password</label>
                             <div class="col-sm-10">
                               <input type="password" class="form-control" id="inputName" placeholder="Enter current password" name="oldpassword">
                               <span class="text-danger error-text oldpassword_error"></span>
