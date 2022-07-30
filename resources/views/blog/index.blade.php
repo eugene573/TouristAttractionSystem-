@@ -3,6 +3,12 @@
 @section('content')
 
 <style>
+
+h1 {
+  color: white;
+  text-shadow: 3px 3px 3px green, 0 0 20px green, 0 0 10px green;
+}
+
     body{
         background-color: beige;
         font-family: Arial;
@@ -167,8 +173,8 @@
         <div class="card">
           <center>
          <h1>{{ $post->title }}</h1>
-            <h5>By <span>{{ $post->user->name }}</span>, 
-            Created on {{ date('jS M Y', strtotime($post->updated_at)) }}  
+            <h5>• By <span>{{ $post->user->name }}</span>, 
+            Created on {{ date('jS M Y', strtotime($post->updated_at))}}  
             </h5>
             </center>
             <br>

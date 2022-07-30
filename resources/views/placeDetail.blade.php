@@ -12,12 +12,17 @@
         <div class="row">
                @CSRF
             <div class="col-md-9">
-             <h2 class="card-title black-text">{{$place->name}}</h2>
+             <center><h2>{{$place->name}}</h2></center>
              <input type="hidden" name="placeID" value="{{$place->id}}">
              <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+
+h2 {
+        color: white;
+  text-shadow: 3px 3px 3px green, 0 0 20px green, 0 0 10px green;
+}
 
 body {
   font-family: Arial;
@@ -215,6 +220,8 @@ function showSlides(n) {
               <br>
               <iframe src="{{$place->map}}" width="800" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
              </div> 
+              <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62c993cd5f98c742"></script>
       </div>
     </div>
 </div>

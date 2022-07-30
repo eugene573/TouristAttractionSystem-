@@ -1,17 +1,18 @@
 @extends('layout')
 @section('content')
 
-
+<br>
+<br>
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>Profile</h1>
+              <h1></h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
                 <li class="breadcrumb-item active">User Profile</li>
               </ol>
             </div>
@@ -29,14 +30,14 @@
               <div class="card card-primary card-outline">
                 <div class="card-body box-profile">
                   <div class="text-center">
-                    <img class="profile-user-img img-fluid img-circle admin_picture" src="{{ Auth::user()->picture }}" alt="User profile picture">
+                    <img class="profile-user-img img-fluid img-circle" src="{{ Auth::user()->picture }}" alt="User profile picture">
                   </div>
   
-                  <h3 class="profile-username text-center admin_name">{{Auth::user()->name}}</h3>
+                  <h3 class="profile-username text-center">{{ Auth::user()->name }}</h3>
   
                   <p class="text-muted text-center">User</p>
 
-                  <input type="file" name="admin_image" id="admin_image" style="opacity: 0;height:1px;display:none">
+                  <input type="file" name="admin_image" id="admin_image" style="opacity:0;height:1px;display:none">
                   <a href="javascript:void(0)" class="btn btn-primary btn-block" id="change_picture_btn"><b>Change Profile Image</b></a>
                   
                 </div>
@@ -60,24 +61,24 @@
                     <div class="active tab-pane" id="personal_info">
                       <form class="form-horizontal" method="POST" action="{{ route('adminUpdateInfo') }}" id="AdminInfoForm">
                         <div class="form-group row">
-                          <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+                          <label for="inputName" class="col-sm-2 col-form-label">Name:</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputName" placeholder="Name" value="{{ Auth::user()->name }}" name="name">
+                            <input type="text" class="form-control" id="inputName" placeholder="Name" style="color:grey;" value="{{ Auth::user()->name }}" name="name">
 
                             <span class="text-danger error-text name_error"></span>
                           </div>
                         </div>
                         <div class="form-group row">
-                          <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                          <label for="inputEmail" class="col-sm-2 col-form-label">Email:</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputEmail" placeholder="Email" value="{{ Auth::user()->email }}" name="email">
+                            <input type="text" class="form-control" id="inputEmail" placeholder="Email" style="color:grey;" value="{{ Auth::user()->email }}" name="email">
                             <span class="text-danger error-text email_error"></span>
                           </div>
                         </div>
                         <div class="form-group row">
-                          <label for="inputName2" class="col-sm-2 col-form-label">Sex</label>
+                          <label for="inputName2" class="col-sm-2 col-form-label">Sex:</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputName2" placeholder="Sex" value="{{ Auth::user()->sex }}" name="sex">
+                            <input type="text" class="form-control" id="inputName2" placeholder="Sex" style="color:grey;" value="{{ Auth::user()->sex }}" name="sex">
                             <span class="text-danger error-text sex_error"></span>
                           </div>
                         </div>

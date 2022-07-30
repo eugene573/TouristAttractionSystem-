@@ -1,6 +1,14 @@
 @extends('layout')
 
 @section('content')
+
+<style>
+ h1 {
+    color: white;
+  text-shadow: 3px 3px 3px green, 0 0 20px green, 0 0 10px green;
+}
+</style>
+
 <body>
 <br><br><br>
 <div class="w-4/5 m-auto text-center">
@@ -13,7 +21,7 @@
 
 <div class="w-4/5 m-auto pt-20 text-right">
     <span style="font-style:bold; font-style:italic;">
-      <center>  By <span>{{ $post->user->name }}</span>, Created on {{ date('jS M Y', strtotime($post->updated_at)) }} </center>
+      <center> • By <span>{{ $post->user->name }}</span>, Created on {{ date('jS M Y', strtotime($post->updated_at)) }} </center>
     </span>
 
     <br><br>

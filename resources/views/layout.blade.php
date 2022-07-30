@@ -201,12 +201,12 @@ form.example::after {
         @auth
                         @if ( Auth::user()->role == 1)
                         <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF0mkZsMkaywe4ecyexbpomRK2UmXnT-YAr9u_6Ezi11ZmhnFF7OKHYtN0rFsny-OpIZU&usqp=CAU"
+            src="{{ Auth::user()->picture }}"
             class="rounded-circle"
             height="60"
             loading="lazy"
           />       
-            <a class="dropdown-item" style="background-color:#D3D3D3;" href="{{ route('admin.dashboard') }}">{{ Auth::user()->name }}</a>
+            <a class="dropdown-item" style="background-color:#D3D3D3;" href="">{{ Auth::user()->name }}</a>
           </li>
            
           <li>
@@ -214,7 +214,7 @@ form.example::after {
           </li>
 
           <li>
-            <a class="dropdown-item" href="{{ route('admin.settings') }}">Settings <i class="fa fa-gear fa-spin" style="font-size:18px"></i></a>
+            <a class="dropdown-item" href="{{ route('admin.settings') }}">Help</i></a>
           </li>
 
           <li>
@@ -229,12 +229,12 @@ form.example::after {
 
                         @if ( Auth::user()->role == 2)
                         <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF0mkZsMkaywe4ecyexbpomRK2UmXnT-YAr9u_6Ezi11ZmhnFF7OKHYtN0rFsny-OpIZU&usqp=CAU"
+            src="{{ Auth::user()->picture }}"
             class="rounded-circle"
             height="60"
             loading="lazy"
           />       
-                <a class="dropdown-item" style="background-color:#D3D3D3;" href="{{ route('user.dashboard') }}"> {{ Auth::user()->name }}</a>
+                <a class="dropdown-item" style="background-color:#D3D3D3;" href=""> {{ Auth::user()->name }}</a>
           </li>
            
           <li>
@@ -242,7 +242,7 @@ form.example::after {
           </li>
 
           <li>
-            <a class="dropdown-item" href="{{ route('user.settings') }}">Settings <i class="fa fa-gear fa-spin" style="font-size:18px"></i></a>
+            <a class="dropdown-item" href="{{ route('user.settings') }}">Help</a>
           </li>
                  
           <li>

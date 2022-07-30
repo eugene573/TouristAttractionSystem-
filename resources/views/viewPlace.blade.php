@@ -5,6 +5,11 @@
     body{
         background-image: url("https://cdn.wallpapersafari.com/60/84/yhk1gA.jpg");
     }
+
+    h3 {
+        color: white;
+  text-shadow: 3px 3px 3px green, 0 0 20px green, 0 0 10px green;
+}
 </style>
 
 <div class="row">
@@ -20,7 +25,7 @@
             <div class="card" style="width: 20rem; height: 660">
                 <img class="card-img-top img-fluid" src="{{asset('images/'.$place->image1)}}" alt="Place Image" style='height: 220px; width: 35rem;'>
                 <div class="card-body">
-                    <h3 class="card-title" style="text-align: center; color:black">{{$place->name}}</h3>
+                    <h3 class="card-title" style="text-align: center;">{{$place->name}}</h3>
                     <br>
                     <h5 class="card-text" style="text-align: center; color: black;">{{$place->reviews}}⭐</h5>
                     <br>
