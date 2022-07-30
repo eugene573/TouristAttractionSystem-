@@ -181,6 +181,11 @@ h1 {
             <div><center>
                 <img src="{{ asset('images/' . $post->image_path) }}" style="height: 500px; width: 700px;" class="img-fluid" alt="">
             </div></center><br>
+            
+            <div class="text">
+                    <img class="rounded-circle" height="70" width="70" src="{{Auth::user()->avatar}}" alt="User profile picture">  &nbsp;&nbsp;{{ Auth::user()->name }}
+            </div>
+                  <br> 
             <p>
                 {{ $post->description }}
             </p>

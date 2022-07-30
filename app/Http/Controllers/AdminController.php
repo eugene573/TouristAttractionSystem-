@@ -5,16 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Models\User;
+use Image;
 
 class AdminController extends Controller
 {
+
     function index(){
 
         return view('dashboards.admins.index');
        }
     
        function profile(){
-           return view('dashboards.admins.profile');
+        return view('dashboards.admins.profile', array('user' => Auth::user()) );
        }
        function settings(){
            return view('dashboards.admins.settings');
@@ -45,36 +47,23 @@ class AdminController extends Controller
                }
        }
 
-       function updatePicture(Request $request){
-           $path = 'users/images/';
-           $file = $request->file('admin_image');
-           $new_name = 'UIMG_'.date('Ymd').uniqid().'.jpg';
+       
+    function updateAvatar(Request $request){
 
-           //Upload new image
-           $upload = $file->move(public_path($path), $new_name);
-           
-           if( !$upload ){
-               return response()->json(['status'=>0,'msg'=>'Something went wrong, upload new picture failed.']);
-           }else{
-               //Get Old picture
-               $oldPicture = User::find(Auth::user()->id)->getAttributes()['picture'];
+    	// Handle the user upload of avatar
+    	if($request->hasFile('avatar')){
+    		$avatar = $request->file('avatar');
+    		$filename = time() . '.' . $avatar->getClientOriginalExtension();
+    		Image::make($avatar)->resize(300, 300)->save( public_path('/uploads/avatars/' . $filename ) );
 
-               if( $oldPicture != '' ){
-                   if( \File::exists(public_path($path.$oldPicture))){
-                       \File::delete(public_path($path.$oldPicture));
-                   }
-               }
+    		$user = Auth::user();
+    		$user->avatar = $filename;
+    		$user->save();
+    	}
 
-               //Update DB
-               $update = User::find(Auth::user()->id)->update(['picture'=>$new_name]);
+        return view('dashboards.admins.profile');
 
-               if( !$upload ){
-                   return response()->json(['status'=>0,'msg'=>'Something went wrong, updating picture in db failed.']);
-               }else{
-                   return response()->json(['status'=>1,'msg'=>'Your profile picture has been updated successfully']);
-               }
-           }
-       }
+    }
 
 
        function changePassword(Request $request){

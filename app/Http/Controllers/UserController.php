@@ -3,18 +3,31 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests;
+use Auth;
+use Image;
 
 class UserController extends Controller
 {
-   function index(){
+    //
+    public function profile(){
+    	return view('profile', array('user' => Auth::user()) );
+    }
 
-    return view('dashboards.users.index');
-   }
+    public function update_avatar(Request $request){
 
-   function profile(){
-       return view('dashboards.users.profile');
-   }
-   function settings(){
-       return view('dashboards.users.settings');
-   }
+    	// Handle the user upload of avatar
+    	if($request->hasFile('avatar')){
+    		$avatar = $request->file('avatar');
+    		$filename = time() . '.' . $avatar->getClientOriginalExtension();
+    		Image::make($avatar)->resize(300, 300)->save( public_path('/uploads/avatars/' . $filename ) );
+
+    		$user = Auth::user();
+    		$user->avatar = $filename;
+    		$user->save();
+    	}
+
+    	return view('profile', array('user' => Auth::user()) );
+
+    }
 }

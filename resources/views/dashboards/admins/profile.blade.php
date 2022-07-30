@@ -30,16 +30,17 @@
               <div class="card card-primary card-outline">
                 <div class="card-body box-profile">
                   <div class="text-center">
-                    <img class="profile-user-img img-fluid img-circle" src="{{Auth::user()->picture}}" alt="User profile picture">
+                    <img class="profile-user-img img-fluid img-circle" src="{{Auth::user()->avatar}}" alt="User profile picture">
                   </div>
-  
+                      <br>
                   <h3 class="profile-username text-center">{{Auth::user()->name}}</h3>
   
                   <p class="text-muted text-center">Admin</p>
-
-                  <input type="file" name="admin_image" id="admin_image" style="opacity:0;height:1px;display:none">
-                  <a href="" class="btn btn-primary btn-block" id="change_picture_btn"><b>Change Profile Image</b></a>
-                  
+                  <form enctype="multipart/form-data" action="/admin/profile" method="POST">
+                  <input type="file" name="avatar">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <input type="submit" class="pull-right btn btn-sm btn-primary">
+                  </form>
                 </div>
                 <!-- /.card-body -->
               </div>

@@ -201,10 +201,10 @@ form.example::after {
         @auth
                         @if ( Auth::user()->role == 1)
                         <img
-            src="{{ Auth::user()->picture }}"
+            src="{{ Auth::user()->avatar }}"
             class="rounded-circle"
-            height="60"
-            loading="lazy"
+            height="70"
+            width="70"
           />       
             <a class="dropdown-item" style="background-color:#D3D3D3;" href="">{{ Auth::user()->name }}</a>
           </li>
@@ -229,9 +229,10 @@ form.example::after {
 
                         @if ( Auth::user()->role == 2)
                         <img
-            src="{{ Auth::user()->picture }}"
+            src="{{ Auth::user()->avatar }}"
             class="rounded-circle"
-            height="60"
+            height="70"
+            width="70"
             loading="lazy"
           />       
                 <a class="dropdown-item" style="background-color:#D3D3D3;" href=""> {{ Auth::user()->name }}</a>
@@ -258,7 +259,8 @@ form.example::after {
                     <img
             src="https://springhub.org/wp-content/uploads/2021/04/blank_profile.png"
             class="rounded-circle"
-            height="60"
+            height="70"
+            width="70"
             loading="lazy"
           />       
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Log in &nbsp;<i style='font-size:18px' class='fas'>&#xf2f6;</i></a>

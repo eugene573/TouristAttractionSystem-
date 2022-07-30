@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->boolean('role')->nullable();
             $table->string('sex')->nullable();
-            $table->string('picture')->nullable();
+            $table->string('avatar')->default('https://springhub.org/wp-content/uploads/2021/04/blank_profile.png');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
