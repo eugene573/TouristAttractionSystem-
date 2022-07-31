@@ -202,9 +202,8 @@ form.example::after {
                         @if ( Auth::user()->role == 1)
                         <img
             src="{{ Auth::user()->avatar }}"
-            class="rounded-circle"
-            height="70"
-            width="70"
+            class="rounded"
+            style="width:80px;height:70px;"
           />       
             <a class="dropdown-item" style="background-color:#D3D3D3;" href="">{{ Auth::user()->name }}</a>
           </li>
@@ -230,10 +229,8 @@ form.example::after {
                         @if ( Auth::user()->role == 2)
                         <img
             src="{{ Auth::user()->avatar }}"
-            class="rounded-circle"
-            height="70"
-            width="70"
-            loading="lazy"
+            class="rounded"
+            style="width:80px;height:70px;"
           />       
                 <a class="dropdown-item" style="background-color:#D3D3D3;" href=""> {{ Auth::user()->name }}</a>
           </li>
@@ -261,7 +258,6 @@ form.example::after {
             class="rounded-circle"
             height="70"
             width="70"
-            loading="lazy"
           />       
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Log in &nbsp;<i style='font-size:18px' class='fas'>&#xf2f6;</i></a>
 

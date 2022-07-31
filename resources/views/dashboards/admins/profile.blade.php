@@ -13,7 +13,7 @@
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item active">User Profile</li>
+                <li class="breadcrumb-item active">Admin Profile</li>
               </ol>
             </div>
           </div>
@@ -36,10 +36,13 @@
                   <h3 class="profile-username text-center">{{Auth::user()->name}}</h3>
   
                   <p class="text-muted text-center">Admin</p>
+                  <br>
                   <form enctype="multipart/form-data" action="/admin/profile" method="POST">
                   <input type="file" name="avatar">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <input type="submit" class="pull-right btn btn-sm btn-primary">
+                <br>
+                <br>
+                <center><button type="submit" class="btn btn-success">Upload</button></center>
                   </form>
                 </div>
                 <!-- /.card-body -->
