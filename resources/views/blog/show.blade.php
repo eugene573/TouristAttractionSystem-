@@ -4,9 +4,13 @@
 
 <style>
  h1 {
-    color: white;
-  text-shadow: 3px 3px 3px green, 0 0 20px green, 0 0 10px green;
+    color: #28A828;
+  text-shadow: 3px 3px 3px white, 0 0 20px white, 0 0 10px green;
 }
+
+h6{
+        font-weight: bold;
+    }
 </style>
 
 <body>
@@ -31,8 +35,15 @@
         <img src="{{ asset('images/' . $post->image_path) }}" width="650" class="img-fluid"  alt="">
     </div>
     </center>
-
     <br>
+    <br>
+    <center>
+    <div class="text">
+    <h6><a href="{{ $post->user->avatar }}"><img class="rounded-circle" height="70" width="70" src="{{$post->user->avatar}}"
+                    alt="User profile picture">  &nbsp;&nbsp;{{ $post->user->name }}</h6>
+            </div>
+            </center>
+  
     <p class="text-xl text-gray-700 pt-8 pb-10 leading-8 font-light text-center">
         {{ $post->description }}
     </p>

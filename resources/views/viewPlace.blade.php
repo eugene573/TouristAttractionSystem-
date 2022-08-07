@@ -7,9 +7,9 @@
     }
 
     h3 {
-        color: white;
-  text-shadow: 3px 3px 3px green, 0 0 20px green, 0 0 10px green;
-}
+        color: #28A828;
+  text-shadow: 3px 3px 3px white, 0 0 20px white, 0 0 10px green;
+  }
 </style>
 
 <div class="row">

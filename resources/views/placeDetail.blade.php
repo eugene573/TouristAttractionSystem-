@@ -201,21 +201,21 @@ function showSlides(n) {
                <br>
                <br>
               <div class="col-md-9">
-              <h5><div class="card-text"><strong><b style="color:blue;">Reviews: &nbsp;&nbsp;</b></strong>{{$place->reviews}} ⭐</div></h5>
+              <h5><div class="card-text"><strong><b style="color:#28A828;">Reviews: &nbsp;&nbsp;</b></strong>{{$place->reviews}} ⭐</div></h5>
               <br>
-              <h5><div class="card-text"><strong><b style="color:blue;">Introduction:&nbsp;&nbsp;</b></strong>{{$place->introduction}}</div></h5>
+              <h5><div class="card-text"><strong><b style="color:#28A828;">Introduction:&nbsp;&nbsp;</b></strong>{{$place->introduction}}</div></h5>
                <br>
-               <h5><div class="card-text"><strong><b style="color:blue;">Near By Area:&nbsp;&nbsp;</b></strong>{{$place->nearByArea}}</div></h5>
+               <h5><div class="card-text"><strong><b style="color:#28A828;">Near By Area:&nbsp;&nbsp;</b></strong>{{$place->nearByArea}}</div></h5>
               <br>
-               <h5><div class="card-text"><strong><b style="color:blue;">Open Hour⏰: &nbsp;&nbsp;</b></strong>{{$place->openHour}}</div></h5>
+               <h5><div class="card-text"><strong><b style="color:#28A828;">Open Hour⏰: &nbsp;&nbsp;</b></strong>{{$place->openHour}}</div></h5>
                <br>
-              <h5><div class="card-text"><strong><b style="color:blue;">Price💲: &nbsp;&nbsp;</b></strong>{{$place->price}}</div></h5>
+              <h5><div class="card-text"><strong><b style="color:#28A828;">Price💲: &nbsp;&nbsp;</b></strong>{{$place->price}}</div></h5>
               <br>
-              <h5><div class="card-text"><strong><b style="color:blue;">Address📌: &nbsp;&nbsp;</b></strong>{{$place->address}}</div></h5>
+              <h5><div class="card-text"><strong><b style="color:#28A828;">Address📌: &nbsp;&nbsp;</b></strong>{{$place->address}}</div></h5>
                <br>
-              <h5><div class="card-text"><strong><b style="color:blue;">Contact Number📞: &nbsp;&nbsp;</b></strong>{{$place->contactNumber}}</div></h5>
+              <h5><div class="card-text"><strong><b style="color:#28A828;">Contact Number📞: &nbsp;&nbsp;</b></strong>{{$place->contactNumber}}</div></h5>
               <br>
-              <h5><div class="card-text"><strong><b style="color:blue;"> Booking Now📩: &nbsp;&nbsp;</b></strong><a href="{{$place->bookingMethod}}"><u style="color:green">CLICK HERE</u></a></div></h5>
+              <h5><div class="card-text"><strong><b style="color:#28A828;"> Booking Now📩: &nbsp;&nbsp;</b></strong><a href="{{$place->bookingMethod}}"><u style="color:blue;">CLICK HERE</u></a></div></h5>
               <br>
               <br>
               <iframe src="{{$place->map}}" width="800" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

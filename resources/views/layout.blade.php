@@ -111,7 +111,7 @@ form.example::after {
 
                 <!-- Links -->
                 <ul class="navbar-nav mr-auto ">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" style= font-family:Arial; href="{{url('')}}">Home
                             <span class="sr-only">(current)</span>
                         </a>
@@ -193,18 +193,15 @@ form.example::after {
           aria-haspopup="true"
           aria-expanded="false"
         >
-        
-        
-        
+          
+      
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
         @if (Route::has('login'))
         @auth
+                    <!--admin-->
                         @if ( Auth::user()->role == 1)
-                        <img
-            src="{{ Auth::user()->avatar }}"
-            class="rounded"
-            style="width:80px;height:70px;"
-          />       
+                        <a href="{{ Auth::user()->avatar }}"><img class="rounded-circle" height="70" width="70" src="{{ Auth::user()->avatar }}" 
+                    alt="User profile picture"></a>  
             <a class="dropdown-item" style="background-color:#D3D3D3;" href="">{{ Auth::user()->name }}</a>
           </li>
            
@@ -226,12 +223,10 @@ form.example::after {
           
                         @endif
 
+                     <!--user-->
                         @if ( Auth::user()->role == 2)
-                        <img
-            src="{{ Auth::user()->avatar }}"
-            class="rounded"
-            style="width:80px;height:70px;"
-          />       
+                        <a href="{{ Auth::user()->avatar }}"><img class="rounded-circle" height="70" width="70" src="{{ Auth::user()->avatar }}" 
+                    alt="User profile picture"></a>  
                 <a class="dropdown-item" style="background-color:#D3D3D3;" href=""> {{ Auth::user()->name }}</a>
           </li>
            
@@ -287,7 +282,7 @@ form.example::after {
                        <br>
                        <br>
                        
-                       <h2 class="mb-8 font-weight-bold text-center white-text">About us</h2>
+                       <h3 class="mb-8 font-weight-bold text-center white-text">About us</h3>
 
                        <footer class="page-footer">
     <div class="container">
@@ -298,7 +293,7 @@ form.example::after {
             <p>FunTime is the leading e-commerce travel platform that connects travelers with Authentic Local Tours, Indoor&Outdoor Activities and Homestay. It is not only suitable for foreigners but locals. Our goals are saving user's time from browsing the fake website and collecting the wrong or incomplete information. We provides the latest and complete information to increase tourism visitor experience.</p>
                 <br>
                 <br>
-            <h2 class="mb-6 font-weight-bold text-center white-text">Contact us</h2>
+            <h3 class="mb-6 font-weight-bold text-center white-text">Contact us</h3>
            <h6 class="text-center"> 
            funtime220614@gmail.com
            <br>

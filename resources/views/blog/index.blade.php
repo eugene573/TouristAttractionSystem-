@@ -3,10 +3,14 @@
 @section('content')
 
 <style>
-
+ h3 {
+        color: #28A828;
+  text-shadow: 3px 3px 3px white, 0 0 20px white, 0 0 10px green;
+  }
+  
 h1 {
-  color: white;
-  text-shadow: 3px 3px 3px green, 0 0 20px green, 0 0 10px green;
+  color: #28A828;
+  text-shadow: 3px 3px 3px white, 0 0 20px white, 0 0 10px green;
 }
 
     body{
@@ -30,6 +34,9 @@ h1 {
     h5{
         font-size: small;
         font-style: italic;
+    }
+    h6{
+        font-weight: bold;
     }
     #float-right{
         float: right;
@@ -181,10 +188,12 @@ h1 {
             <div><center>
                 <img src="{{ asset('images/' . $post->image_path) }}" style="height: 500px; width: 700px;" class="img-fluid" alt="">
             </div></center><br>
-            
+
             <div class="text">
-                    <img class="rounded-circle" height="70" width="70" src="{{Auth::user()->avatar}}" alt="User profile picture">  &nbsp;&nbsp;{{ Auth::user()->name }}
+                    <h6><a href="{{ $post->user->avatar }}"><img class="rounded-circle" height="70" width="70" src="{{$post->user->avatar}}" 
+                    alt="User profile picture"></a>  &nbsp;&nbsp;{{ $post->user->name }}</h6>
             </div>
+            
                   <br> 
             <p>
                 {{ $post->description }}
