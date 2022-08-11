@@ -70,7 +70,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['prefix'=>'admin'], function(){
     Route::get('dashboard',[AdminController::class,'index'])->name('admin.dashboard');
     Route::get('profile',[AdminController::class,'profile'])->name('admin.profile');
-    Route::get('settings',[AdminController::class,'settings'])->name('admin.settings');
+    Route::get('help',[AdminController::class,'help'])->name('admin.help');
 
     Route::post('profile',[AdminController::class,'updateAvatar'])->name('adminUpdateAvatar');
     Route::post('update-profile-info',[AdminController::class,'updateInfo'])->name('adminUpdateInfo');
@@ -84,7 +84,7 @@ Route::auth();
 Route::group(['prefix'=>'user'], function(){
 Route::get('dashboard',[UserController::class,'index'])->name('user.dashboard');
 Route::get('profile',[UserController::class,'profile'])->name('user.profile');
-Route::get('settings',[UserController::class,'settings'])->name('user.settings');
+Route::get('help',[UserController::class,'help'])->name('user.help');
 
 Route::post('profile',[UserController::class,'updateAvatar'])->name('userUpdateAvatar');
 Route::post('update-profile-info',[UserController::class,'updateInfo'])->name('userUpdateInfo');

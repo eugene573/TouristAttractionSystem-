@@ -8,6 +8,11 @@
   text-shadow: 3px 3px 3px white, 0 0 20px white, 0 0 10px green;
 }
 
+h3 {
+        color: #28A828;
+  text-shadow: 3px 3px 3px white, 0 0 20px white, 0 0 10px green;
+  }
+
 h6{
         font-weight: bold;
     }
@@ -25,10 +30,10 @@ h6{
 
 <div class="w-4/5 m-auto pt-20 text-right">
     <span style="font-style:bold; font-style:italic;">
-      <center> • By <span>{{ $post->user->name }}</span>, Created on {{ date('jS M Y', strtotime($post->updated_at)) }} </center>
+      <center> Created on {{ date('jS M Y', strtotime($post->updated_at)) }} </center>
     </span>
 
-    <br><br>
+    <br>
 
     <center>
     <div>
@@ -40,7 +45,7 @@ h6{
     <center>
     <div class="text">
     <h6><a href="{{ $post->user->avatar }}"><img class="rounded-circle" height="70" width="70" src="{{$post->user->avatar}}"
-                    alt="User profile picture">  &nbsp;&nbsp;{{ $post->user->name }}</h6>
+                    alt="User profile picture"></a>  &nbsp;&nbsp;{{ $post->user->name }}</h6>
             </div>
             </center>
   

@@ -1,6 +1,13 @@
 @extends('layout')
 @section('content')
 
+<style>
+   h3 {
+        color: #28A828;
+  text-shadow: 3px 3px 3px white, 0 0 20px white, 0 0 10px green;
+  }
+</style>
+
 <br>
 <br>
     <!-- Content Header (Page header) -->
@@ -30,10 +37,10 @@
               <div class="card card-primary card-outline">
                 <div class="card-body box-profile">
                   <div class="text-center">
-                    <img class="profile-user-img img-fluid img-circle" src="{{Auth::user()->avatar}}" alt="User profile picture">
+                    <a href="{{ Auth::user()->avatar }}"><img class="profile-user-img img-fluid img-circle" src="{{Auth::user()->avatar}}" alt="User profile picture"></a>
                   </div>
                       <br>
-                  <h3 class="profile-username text-center">{{Auth::user()->name}}</h3>
+                  <h2 class="profile-username text-center">{{Auth::user()->name}}</h2>
   
                   <p class="text-muted text-center">User</p>
                   <br>

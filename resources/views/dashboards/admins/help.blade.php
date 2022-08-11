@@ -11,6 +11,13 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+
+   h3 {
+        color: #28A828;
+  text-shadow: 3px 3px 3px white, 0 0 20px white, 0 0 10px green;
+  }
+
+
 .accordion {
   background-color: #eee;
   color: #444;
@@ -92,5 +99,3 @@ for (i = 0; i < acc.length; i++) {
 </body>
 </html>
 @endsection
-
-

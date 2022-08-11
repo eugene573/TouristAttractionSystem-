@@ -21,8 +21,8 @@ class UserController extends Controller
        }
 
 
-	   function settings(){
-		return view('dashboards.users.settings');
+	   function help(){
+		return view('dashboards.users.help');
 	}
 
 
@@ -51,18 +51,22 @@ class UserController extends Controller
 		}
 }
 
-     function updateAvatar(Request $request){
+     function updateAvatar(){
+		$r=request();
+        $users= User::find($r->userID);
 
-    	// Handle the user upload of avatar
-    	if($request->hasFile('avatar')){
-    		$avatar = $request->file('avatar');
-    		$filename = time() . '.' . $avatar->getClientOriginalExtension();
-    		Image::make($avatar)->resize(300, 300)->save( public_path('/uploads/avatars/' . $filename ) );
-
-    		$user = Auth::user();
-    		$user->avatar = $filename;
-    		$user->save();
-    	}
+        $input = $r->all();
+   
+        if ($image = $r->file('avatar')) {
+            $destinationPath = '/uploads/avatars/';
+			$userImage = $image->getClientOriginalExtension();
+            $image->move($destinationPath, $userImage);
+            $input['avatar'] = "$userImage";
+        }else{
+            unset($input['avatar']);
+        }
+           
+        $users->save();
 
     	return view('dashboards.users.profile');
 

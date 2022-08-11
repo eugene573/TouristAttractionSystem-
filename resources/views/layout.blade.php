@@ -210,7 +210,7 @@ form.example::after {
           </li>
 
           <li>
-            <a class="dropdown-item" href="{{ route('admin.settings') }}">Help</i></a>
+            <a class="dropdown-item" href="{{ route('admin.help') }}">Help</i></a>
           </li>
 
           <li>
@@ -235,7 +235,7 @@ form.example::after {
           </li>
 
           <li>
-            <a class="dropdown-item" href="{{ route('user.settings') }}">Help</a>
+            <a class="dropdown-item" href="{{ route('user.help') }}">Help</a>
           </li>
                  
           <li>

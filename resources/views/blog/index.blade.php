@@ -180,7 +180,7 @@ h1 {
         <div class="card">
           <center>
          <h1>{{ $post->title }}</h1>
-            <h5>• By <span>{{ $post->user->name }}</span>, 
+            <h5>
             Created on {{ date('jS M Y', strtotime($post->updated_at))}}  
             </h5>
             </center>

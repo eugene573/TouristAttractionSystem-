@@ -103,6 +103,11 @@
     transform: translate(0px, 0px);
   }
 }
+
+h3 {
+        color: #28A828;
+  text-shadow: 3px 3px 3px white, 0 0 20px white, 0 0 10px green;
+  }
 </style>
 
 

@@ -18,8 +18,8 @@ class AdminController extends Controller
        function profile(){
         return view('dashboards.admins.profile', array('user' => Auth::user()) );
        }
-       function settings(){
-           return view('dashboards.admins.settings');
+       function help(){
+           return view('dashboards.admins.help');
        }
 
        function updateInfo(Request $request){
