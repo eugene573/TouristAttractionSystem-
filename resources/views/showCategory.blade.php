@@ -9,9 +9,9 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <td>ID</td>
-                        <td>Category Name</td>
-                        <td>Creation time</td>
+                        <td><h5>ID</h5></td>
+                        <td><h5>Category Name</h5></td>
+                        <td><h5>Created Time</h5></td>
                     </tr>
                 </thead>
                 <tbody>

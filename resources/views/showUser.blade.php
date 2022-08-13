@@ -3,22 +3,22 @@
 <br>
 <br>
 <div class="row">
-    <div class="col-sm-3"></div>
-    <div class="col-sm-6">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
         <br><br>
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <td>ID</td>
-                        <td>Name</td>
-                        <td>Email</td>
-                        <td>Role</td>
-                        <td>Gender</td>
-                        <td>Created time</td>
-                        <td>Updated time</td>
+                        <td><h5>ID</h5></td>
+                        <td><h5>Name</h5></td>
+                        <td><h5>Email</h5></td>
+                        <td><h5>Role</h5></td>
+                        <td><h5>Gender</h5></td>
+                        <td><h5>Created Time</h5></td>
+                        <td><h5>Updated Time</h5></td>
                     </tr>
                 </thead>
-                
+
                 <tbody>
                     @foreach($users as $user)
                     <tr>
@@ -35,6 +35,6 @@
             </table>
         <br><br>
     </div>
-    <div class="col-sm-3"></div>
+    <div class="col-sm-2"></div>
 </div>
 @endsection
