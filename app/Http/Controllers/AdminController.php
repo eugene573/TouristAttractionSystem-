@@ -27,7 +27,7 @@ class AdminController extends Controller
                $validator = \Validator::make($request->all(),[
                    'name'=>'required',
                    'email'=> 'required|email|unique:users,email,'.Auth::user()->id,
-                   'sex'=>'required',
+                   'gender'=>'required',
                ]);
 
                if(!$validator->passes()){
@@ -36,7 +36,7 @@ class AdminController extends Controller
                     $query = User::find(Auth::user()->id)->update([
                          'name'=>$request->name,
                          'email'=>$request->email,
-                         'sex'=>$request->sex,
+                         'gender'=>$request->gender,
                     ]);
 
                     if(!$query){

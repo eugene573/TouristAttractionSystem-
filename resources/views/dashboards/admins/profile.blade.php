@@ -87,10 +87,10 @@
                           </div>
                         </div>
                         <div class="form-group row">
-                          <label for="inputName2" class="col-sm-2 col-form-label">Sex:</label>
+                          <label for="inputName2" class="col-sm-2 col-form-label">Gender:</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputName2" placeholder="Sex" style="color:grey;" value="{{ Auth::user()->sex }}" name="sex">
-                            <span class="text-danger error-text sex_error"></span>
+                            <input type="text" class="form-control" id="inputName2" placeholder="Gender" style="color:grey;" value="{{ Auth::user()->gender }}" name="gender">
+                            <span class="text-danger error-text gender_error"></span>
                           </div>
                         </div>
                         <div class="form-group row">

@@ -34,6 +34,8 @@ Route::get('/showCategory',[App\Http\Controllers\CategoryController::class,'view
 
 Route::get('/showPlace',[App\Http\Controllers\ManagePlaceController::class,'view'])->name('showPlace');
 
+Route::get('/showUser',[App\Http\Controllers\UserController::class,'view'])->name('showUser');
+
 Route::get('/viewPlace',[App\Http\Controllers\PlaceController::class,'viewPlace'])->
 name('viewPlace');
 

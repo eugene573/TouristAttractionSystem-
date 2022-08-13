@@ -19,6 +19,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 
+h3 {
+        color: #28A828;
+  text-shadow: 3px 3px 3px white, 0 0 20px white, 0 0 10px green;
+  }
+
 h2 {
         color: white;
   text-shadow: 3px 3px 3px green, 0 0 20px green, 0 0 10px green;

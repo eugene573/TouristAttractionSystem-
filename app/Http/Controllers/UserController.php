@@ -11,6 +11,11 @@ use Image;
 class UserController extends Controller
 {
   
+	public function view(){
+        $viewUser=User::all(); //generate SQL select * from categories
+        Return view('showUser')->with('users',$viewUser);
+    }
+
 	function index(){
 
         return view('dashboards.users.index');
@@ -31,7 +36,7 @@ class UserController extends Controller
 		$validator = \Validator::make($request->all(),[
 			'name'=>'required',
 			'email'=> 'required|email|unique:users,email,'.Auth::user()->id,
-			'sex'=>'required',
+			'gender'=>'required',
 		]);
 
 		if(!$validator->passes()){
@@ -40,7 +45,7 @@ class UserController extends Controller
 			 $query = User::find(Auth::user()->id)->update([
 				  'name'=>$request->name,
 				  'email'=>$request->email,
-				  'sex'=>$request->sex,
+				  'gender'=>$request->gender,
 			 ]);
 
 			 if(!$query){
@@ -51,22 +56,18 @@ class UserController extends Controller
 		}
 }
 
-     function updateAvatar(){
-		$r=request();
-        $users= User::find($r->userID);
+     function updateAvatar(Request $request){
 
-        $input = $r->all();
-   
-        if ($image = $r->file('avatar')) {
-            $destinationPath = '/uploads/avatars/';
-			$userImage = $image->getClientOriginalExtension();
-            $image->move($destinationPath, $userImage);
-            $input['avatar'] = "$userImage";
-        }else{
-            unset($input['avatar']);
-        }
-           
-        $users->save();
+    	// Handle the user upload of avatar
+    	if($request->hasFile('avatar')){
+    		$avatar = $request->file('avatar');
+    		$filename = time() . '.' . $avatar->getClientOriginalExtension();
+    		Image::make($avatar)->resize(300, 300)->save( public_path('/uploads/avatars/' . $filename ) );
+
+    		$user = Auth::user();
+    		$user->avatar = $filename;
+    		$user->save();
+    	}
 
     	return view('dashboards.users.profile');
 
@@ -112,4 +113,5 @@ class UserController extends Controller
 		}
 	}
 
+	
 }

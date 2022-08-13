@@ -201,7 +201,7 @@ form.example::after {
                     <!--admin-->
                         @if ( Auth::user()->role == 1)
                         <a href="{{ Auth::user()->avatar }}"><img class="rounded-circle" height="70" width="70" src="{{ Auth::user()->avatar }}" 
-                    alt="User profile picture"></a>  
+                    alt="User profile picture"></a>(Admin)
             <a class="dropdown-item" style="background-color:#D3D3D3;" href="">{{ Auth::user()->name }}</a>
           </li>
            
@@ -210,8 +210,26 @@ form.example::after {
           </li>
 
           <li>
-            <a class="dropdown-item" href="{{ route('admin.help') }}">Help</i></a>
+            <a class="dropdown-item" href="{{ route('add.Place') }}">Add Place</i></a>
           </li>
+
+          <li>
+            <a class="dropdown-item" href="{{ route('add.Category') }}">Add Category</i></a>
+          </li>
+
+          <li>
+            <a class="dropdown-item" href="{{ route('showPlace') }}">Place List</i></a>
+          </li>
+
+          <li>
+            <a class="dropdown-item" href="{{ route('showCategory') }}">Category List</i></a>
+          </li>
+          
+          <li>
+            <a class="dropdown-item" href="{{ route('showUser') }}">User List</i></a>
+          </li>
+ 
+
 
           <li>
             <a class="dropdown-item" id="log" href="{{ route('logout') }}" onclick="event.preventDefault(); alert('You have successfully logged Out, Have A Nice Day!')
@@ -226,7 +244,7 @@ form.example::after {
                      <!--user-->
                         @if ( Auth::user()->role == 2)
                         <a href="{{ Auth::user()->avatar }}"><img class="rounded-circle" height="70" width="70" src="{{ Auth::user()->avatar }}" 
-                    alt="User profile picture"></a>  
+                    alt="User profile picture"></a>(User)
                 <a class="dropdown-item" style="background-color:#D3D3D3;" href=""> {{ Auth::user()->name }}</a>
           </li>
            
