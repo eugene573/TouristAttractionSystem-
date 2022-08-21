@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+use App\Models\Group;
+
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
@@ -19,7 +21,6 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'role',
         'password',
     ];
 
@@ -41,4 +42,32 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //GroupChat
+    public function group()
+    {
+        return $this->belongsToMany('App\Models\Group', 'admin_id');
+    }
+
+    public function group_member()
+    {
+        return $this->belongsToMany('App\Models\Group', 'group_participants', 'user_id', 'group_id')->orderBy('updated_at', 'desc');
+    }
+
+    public function message()
+    {
+        return $this->hasMany('App\Models\Message', 'user_id');
+    }
+
+    public function groups()
+    {
+        return $this->belongsToMany(Group::class)->withTimestamps();
+    }
+	
+     //Like
+     public function likedPosts()
+     {
+         return $this->belongsToMany('App\Models\Post')->withTimestamps();
+     }
+
 }

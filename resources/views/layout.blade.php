@@ -112,7 +112,7 @@ form.example::after {
                 <!-- Links -->
                 <ul class="navbar-nav mr-auto ">
                     <li class="nav-item">
-                        <a class="nav-link" style= font-family:Arial; href="{{url('')}}">Home
+                        <a class="nav-link" style= font-family:Arial; href="{{route('attraction.places')}}">Attraction
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
@@ -122,23 +122,7 @@ form.example::after {
                     &nbsp;
                      
                     <li class="nav-item">
-                        <a class="nav-link"  style= font-family:Arial; href="/blog">Blog </a>
-                    </li>
-                    &nbsp;
-                    &nbsp;
-                    &nbsp;
-                    &nbsp;
-
-                    <li class="nav-item">
-                        <a class="nav-link" style= font-family:Arial; href="{{route('attraction.places')}}">Attraction </a>
-                    </li>  
-                    &nbsp;
-                    &nbsp;
-                    &nbsp;
-                    &nbsp;
-
-                    <li class="nav-item">
-                        <a class="nav-link" style= font-family:Arial; href="{{route('homeStay.places')}}">Homestay </a>
+                        <a class="nav-link"  style= font-family:Arial; href="{{route('homeStay.places')}}">Homestay </a>
                     </li>
                     &nbsp;
                     &nbsp;
@@ -150,7 +134,7 @@ form.example::after {
                         <a class="nav-link dropdown-toggle" style= font-family:Arial;
                         id="navbarDropdownMenuLink" data-toggle="dropdown"
                         aria-haspopup="true" 
-                        aria-expanded="false">Other activities</a>
+                        aria-expanded="false">Other Activities</a>
 
                         <div class="dropdown-menu dropdown-primary"
                         aria-labelledby="navbarDropdownMenuLink">
@@ -158,20 +142,35 @@ form.example::after {
                     <a class="dropdown-item" style= font-family:Arial; href="{{route('outdoor.places')}}">Outdoor</a> 
                     </div>
                     </li>
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+
+                    <li class="nav-item">
+                        <a class="nav-link" style= font-family:Arial; href="/blog">Blog </a>
+                    </li>  
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+
+                    <li class="nav-item">
+                        <a class="nav-link" style= font-family:Arial; href="/home">GroupChat </a>
+                    </li>
                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                  
                 </ul>
                 @if(Session::has('success'))
                   <div class="alert alert-success" role="alert">
                     {{Session::get('success')}}
                   </div>
                 @endif
-                <form class="example" action="{{route('search.place')}}" method="POST" style="margin:auto;width:290px;">
+                <form class="example" action="{{route('search.place')}}" method="POST" style="margin:auto;width:360px;">
                  @csrf
      <input type="text" placeholder="Search..." name="keyword" style="width:190px;">
   <button type="submit"><i class="fa fa-search"></i></button>

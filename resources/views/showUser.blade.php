@@ -33,7 +33,10 @@
                     @endforeach
                 </tbody>
             </table>
-        <br><br>
+            <br>
+            <strong style="color: red;">Note:</strong>
+<h6>Admin is 1, user is 2.</h6>
+        <br>
     </div>
     <div class="col-sm-2"></div>
 </div>

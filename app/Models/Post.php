@@ -26,4 +26,17 @@ class Post extends Model
             ]
         ];
     }
+
+
+    //comment
+    public function comments()
+    {
+        return $this->hasMany(Comment::class)->whereNull('parent_id');
+    }
+
+    //Like
+    public function likedUsers()
+    {
+        return $this->belongsToMany('App\Models\User')->withTimestamps();
+    }
 }

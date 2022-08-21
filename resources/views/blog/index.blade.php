@@ -149,6 +149,11 @@ h1 {
   }
 }
 </style>
+
+<script>
+  
+</script>
+
 <br>
 <br><br>
 <div class="content">
@@ -194,12 +199,20 @@ h1 {
                     alt="User profile picture"></a>  &nbsp;&nbsp;{{ $post->user->name }}</h6>
             </div>
             
-                  <br> 
             <p>
                 {{ $post->description }}
             </p>
+            
+            <span>
+            <i class="fas fa-thumbs-up" aria-hidden="true"></i>
+            <a href="#" style="color: black;">{{ $post->likedUsers->count() }} Likes</a>&nbsp;&nbsp;
+
+            <i class="fas fa-comment-dots" aria-hidden="true"></i>
+            <a href="#" style="color: black;">{{ $post->comments->count() }} Comments</a>
+            </span>
+
             <a href="/blog/{{ $post->slug }}" class="uppercase bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
-            Keep Reading...
+            View Full Post
             </a>
            
             @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)

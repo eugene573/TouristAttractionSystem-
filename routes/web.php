@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -68,6 +69,12 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::post('/like-post/{show}', [App\Http\Controllers\PostsController::class, 'likePost'])->name('post.like')->middleware(['auth']);
+
+Route::post('store', [App\Http\Controllers\CommentController::class, 'store'])->name("comments.store");
+
+
+
 //Admin
 Route::group(['prefix'=>'admin'], function(){
     Route::get('dashboard',[AdminController::class,'index'])->name('admin.dashboard');
@@ -93,3 +100,26 @@ Route::post('update-profile-info',[UserController::class,'updateInfo'])->name('u
 Route::post('change-profile-picture',[UserController::class,'updatePicture'])->name('userPictureUpdate');
 Route::post('change-password',[UserController::class,'changePassword'])->name('userChangePassword');
 });
+
+//Group Chat
+Route::post('message', 'App\Http\Controllers\HomeController@sendMessage');  // 
+Route::get('/message/{id}', 'App\Http\Controllers\HomeController@getMessage')->name('message'); 
+Route::get('/ShowMassage/{id}', 'App\Http\Controllers\HomeController@ShowMassage'); 
+Route::get('/messag/{id}', 'App\Http\Controllers\HomeController@getMessag')->name('message'); 
+Route::get('/subscribe', 'App\Http\Controllers\HomeController@subscribe');
+Route::delete('/unFollow/{id}', 'App\Http\Controllers\HomeController@remove_user'); 
+/////////////////////  
+Route::get('/group/create', 'App\Http\Controllers\GroupController@create_form');
+Route::post('/group/create', 'App\Http\Controllers\GroupController@create');
+Route::get('/group/join', 'App\Http\Controllers\GroupController@join_form');
+Route::post('/group/join', 'App\Http\Controllers\GroupController@join');
+
+Route::get('/group/edit/{id}', 'App\Http\Controllers\GroupController@edit');
+
+Route::post('/group/update/{id}', 'App\Http\Controllers\GroupController@update');
+
+Route::delete('/group/delete/{id}', 'App\Http\Controllers\GroupController@deleteGroup');
+
+Route::get('/group/members_list/{id}', 'App\Http\Controllers\GroupController@members_list');
+
+Route::get('/remove_user/{id}/{user_id}', 'App\Http\Controllers\GroupController@remove_user');

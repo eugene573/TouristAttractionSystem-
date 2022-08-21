@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class PostsController extends Controller
@@ -127,5 +128,17 @@ class PostsController extends Controller
 
         return redirect('/blog')
             ->with('message', 'Your post has been deleted!');
+    }
+
+    public function likePost($post)
+    {
+        $user = Auth::user();
+        $likePost = $user->likedPosts()->where('post_id', $post)->count();
+        if($likePost == 0){
+            $user->likedPosts()->attach($post);
+        } else{
+            $user->likedPosts()->detach($post);
+        }
+        return redirect()->back();
     }
 }
