@@ -122,7 +122,7 @@ class GroupController extends Controller
         $group_members = $group->participants()->get();
         $group_id = $id;
 
-        return view('group.members_list', compact(['group_members', 'group_id']));
+        return view('group.member_list', compact(['group_members', 'group_id']));
     }
 
     //remove the user from a group
