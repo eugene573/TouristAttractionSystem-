@@ -12,11 +12,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 
-   h3 {
+h3 {
         color: #28A828;
   text-shadow: 3px 3px 3px white, 0 0 20px white, 0 0 10px green;
   }
-
 
 .accordion {
   background-color: #eee;
@@ -68,14 +67,24 @@
   <p>A website that provide user to view the tourist attraction information,booking link and google map in Malaysia.</p>
 </div>
 
-<button class="accordion">How do i make money on FunTime?</button>
+<button class="accordion">Does FunTime has the complete and correct information?</button>
 <div class="panel">
-  <p>User encourages to upload post on the Blog Post, they can earn money on it according to the like of their post.</p>
+  <p>Yes, FunTime has the complete and correct information about every tourist attraction.</p>
 </div>
 
 <button class="accordion">Is FunTime only focus on Malaysia?</button>
 <div class="panel">
   <p>Yes, FunTime is a tourist attraction system that only focus on Malaysia.</p>
+</div>
+
+<button class="accordion">How can i post something on blog?</button>
+<div class="panel">
+  <p>First you need to login and after you can start to upload your post.</p>
+</div>
+
+<button class="accordion">How does the group chat feature work?</button>
+<div class="panel">
+  <p>You can either join a group chat to chat with other or create a new one.</p>
 </div>
 </center>
 
