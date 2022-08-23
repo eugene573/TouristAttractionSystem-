@@ -100,7 +100,7 @@ h5{
         </form>
    
 <hr style="width:85%">
-    <h5>Display Comments</h5><br>
+    <h5>Display Comments</h5><br><br>
   
         @include('blog.commentsDisplay', ['comments' => $post->comments, 'post_id' => $post->id])
 @endif
