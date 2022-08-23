@@ -11,6 +11,7 @@
                     <tr>
                         <td><h5>ID</h5></td>
                         <td><h5>Name</h5></td>
+                        <td><h5>Profile Image</h5></td>
                         <td><h5>Email</h5></td>
                         <td><h5>Role</h5></td>
                         <td><h5>Gender</h5></td>
@@ -23,7 +24,8 @@
                     @foreach($users as $user)
                     <tr>
                         <td>{{$user->id}}</td>
-                        <td>{{$user->name}}</td>
+                        <td>{{$user->name}}</td> 
+                        <td><img src="{{ $user->avatar }}" width="100" class="" alt="">
                         <td>{{$user->email}}</td>
                         <td>{{$user->role}}</td>
                         <td>{{$user->gender}}</td>
